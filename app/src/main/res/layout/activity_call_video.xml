@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<!--    Android 下 WebRTC 使用OpenGL ES 进行视频渲染，用于展示视频的控件是 WebRTC 对 Android 系统控件 SurfaceView 的封装。-->
+    <!--远端界面填充屏幕-->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/RemoteSurfaceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+    <!--本地界面左上角-->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/LocalSurfaceView"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_gravity="top|start"
+        android:layout_margin="16dp" />
+    <Button
+        android:id="@+id/Connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="16dp"/>
+
+</FrameLayout>

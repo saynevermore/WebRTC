@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--AndroidManifest.xml 是每个android程序中必须的文件，它位于整个项目的根目录。
+我们每天都在使用这个文件，往里面配置程序运行所必要的组件，权限，以及一些相关信息。 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codebouy.webrtcforandroid">
+<!--    指定java主程序包名-->
+
+    <!--<user-feature>元素的作用:将APP所依赖的硬件或者软件条件告诉别人。它说明了APP的哪些功能可以随设备的变化而变化。-->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+<!--    添加所需要使用的权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />  <!--音频录制权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <!--        一个AndroidManifest.xml中必须含有一个Application标签，
+    这个标签声明了每一个应用程序的组件及其属性(如icon,label,permission等)-->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+<!--        Activity是一个Android的应用组件，它提供屏幕进行交互。每个Activity都会获得一个用于绘制其用户界面的窗口;
+            即activity之间可以通过按钮点击等互相跳转-->
+        <activity android:name="com.codebouy.webrtcforandroid.CallVideoActivity"></activity>
+        <activity android:name="com.codebouy.webrtcforandroid.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
